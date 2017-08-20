@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import {AngularFireDatabase, FirebaseListObservable} from 'angularfire2/database';
 interface MovieQuote {
   movie: string;
   quote: string;
@@ -20,7 +20,7 @@ export class AppComponent {
     quote: '?????'
   };
 
-  constructor() {
+  constructor(private db: AngularFireDatabase ) {
     this.movieQuotes.push(this.movieQuote);
 
   }
